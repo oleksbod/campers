@@ -1,0 +1,23 @@
+.main {
+  color: var(--color-gray-lightest);
+  width: 100vw;
+  height: calc(100vh - 73px);
+  margin-top: 73px;
+  background-image: url(../images/hero.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding-left: 64px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.title {
+  margin-bottom: 16px;
+}
+
+.description {
+  margin-bottom: 40px;
+}

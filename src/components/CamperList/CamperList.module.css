@@ -1,0 +1,7 @@
+.container {
+  width: calc(100% - 424px);
+}
+
+.button {
+  margin: 0 auto;
+}

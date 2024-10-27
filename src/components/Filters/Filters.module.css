@@ -1,0 +1,14 @@
+.filtersContainer {
+  width: 100%;
+  max-width: 360px;
+}
+
+.filtersLabel {
+  color: var(--color-gray-dark);
+  font-weight: var(--weight-medium);
+  margin-bottom: 32px;
+}
+
+.button {
+  margin-top: 40px;
+}

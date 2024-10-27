@@ -1,0 +1,8 @@
+.locationLabel {
+  color: var(--color-gray-medium);
+  margin-bottom: 8px;
+}
+
+.inputContainer {
+  margin-bottom: 40px;
+}

@@ -1,0 +1,70 @@
+.card {
+  padding: 24px;
+  border-radius: 20px;
+  display: flex;
+  border: 1px solid var(--color-gray-light);
+  background: var(--color-white);
+  display: flex;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.imgWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 292px;
+  height: 320px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.img {
+  height: 100%;
+}
+
+.cardDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: calc(100% - 316px);
+}
+
+.title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.subTitle {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.rating {
+  margin-right: 12px;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.priceContainer {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.favoritesIcon {
+  cursor: pointer;
+}
+.description {
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-wrap: nowrap;
+  color: var(--color-gray-dark);
+  margin-bottom: 24px;
+}
+
+.footer {
+  margin-top: auto;
+}

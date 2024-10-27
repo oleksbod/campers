@@ -1,0 +1,147 @@
+:root {
+  --color-main: #101828;
+  --color-gray-dark: #475467;
+  --color-gray-medium: #6c717b;
+  --color-red-dark: #e44848;
+  --color-red-light: #d84343;
+  --color-yellow: #ffc531;
+  --color-gray-light: #dadde1;
+  --color-gray-lighter: #f2f4f7;
+  --color-gray-lightest: #f7f7f7;
+  --color-white: #ffffff;
+
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+
+  font-family: 'Inter', sans-serif;
+  font-weight: var(--weight-regular);
+  font-size: 16px;
+  font-style: normal;
+  line-height: 24px;
+  color: var(--color-main);
+}
+
+body {
+  margin: 0;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul {
+  margin: 0;
+}
+
+ul {
+  padding: 0;
+}
+
+h1 {
+  font-size: 48px;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 32px;
+  font-weight: var(--weight-semibold);
+}
+
+h3 {
+  font-size: 20px;
+  line-height: 24px;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-main);
+  display: inline-block;
+}
+
+label {
+  display: inline-block;
+}
+
+.button {
+  display: flex;
+  padding: 16px 0;
+  justify-content: center;
+  align-items: center;
+  width: 166px;
+  border-radius: 200px;
+  background: var(--color-red-dark);
+
+  color: var(--color-white);
+  font-weight: var(--weight-medium);
+  letter-spacing: -0.08px;
+  line-height: 24px;
+  border: none;
+  cursor: pointer;
+}
+
+.button:hover {
+  background: var(--color-red-light);
+}
+
+.white-btn {
+  border: 1px solid var(--color-gray-light);
+  color: var(--color-main);
+  background: var(--color-white);
+}
+
+.white-btn:hover {
+  border-color: var(--color-red-light);
+  background: var(--color-white);
+}
+
+.container {
+  padding-top: 73px;
+  width: 100%;
+}
+
+/*MUI Styles*/
+.inputContainer {
+  width: 100%;
+  border-radius: 12px;
+  background: var(--color-gray-lightest);
+  display: flex;
+  align-items: center;
+  padding-left: 18px;
+  gap: 8px;
+}
+
+input {
+  font-family: 'Inter', sans-serif;
+  color: var(--color-main);
+  padding: 18px;
+  padding-left: 0;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  width: 100%;
+  border: none;
+  outline: none;
+  background: none;
+}
+
+.inputContainer .inputIcon {
+  fill: var(--color-gray-medium);
+}
+
+.inputIcon.blackIcon {
+  fill: var(--color-main);
+}
