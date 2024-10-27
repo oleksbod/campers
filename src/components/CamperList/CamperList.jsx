@@ -24,7 +24,6 @@ const CamperList = () => {
   }, [dispatch, page]);
 
   const loadMore = () => {
-    console.log(page, itemsPerLoad, total);
     if (page * itemsPerLoad < total) {
       dispatch(incrementPage());
     }
@@ -32,11 +31,15 @@ const CamperList = () => {
 
   return (
     <div className={css.container}>
-      <ul>
-        {campers.map((camper) => (
-          <CamperItem key={camper.id} camper={camper} />
-        ))}
-      </ul>
+      {campers.length === 0 && !loading ? (
+        <h2 className={css.noResults}>No campers found with the selected filters.</h2>
+      ) : (
+        <ul>
+          {campers.map((camper) => (
+            <CamperItem key={camper.id} camper={camper} />
+          ))}
+        </ul>
+      )}
 
       {loading && <p>Loading...</p>}
 

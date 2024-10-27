@@ -2,9 +2,24 @@ import { Link, useLocation } from 'react-router-dom';
 import css from './CamperItem.module.css';
 import Icon from '../Icon/Icon';
 import CamperEquipment from '../CamperEquipment/CamperEquipment';
+import { useDispatch, useSelector } from 'react-redux';
+import { addFavorite, removeFavorite, selectMyFavorites } from '../../redux/campersSlice';
+import { IconButton } from '@mui/material';
 
 const CamperItem = ({ camper }) => {
   const location = useLocation();
+  const dispatch = useDispatch();
+  const myFavorites = useSelector(selectMyFavorites);
+
+  const isFavorite = myFavorites.includes(camper.id);
+
+  const toggleFavorite = () => {
+    if (isFavorite) {
+      dispatch(removeFavorite(camper.id));
+    } else {
+      dispatch(addFavorite(camper.id));
+    }
+  };
 
   return (
     <li className={css.card}>
@@ -17,7 +32,17 @@ const CamperItem = ({ camper }) => {
             {camper.name}
             <div className={css.priceContainer}>
               <span> &euro; {camper.price}</span>
-              <Icon className={css.favoritesIcon} iconName="heart" width={24} height={24} />
+              <IconButton
+                aria-label="togle favorites"
+                className={css.favoritesIcon}
+                onClick={() => toggleFavorite()}>
+                <Icon
+                  color={isFavorite ? 'var(--color-red-dark)' : 'currentColor'}
+                  iconName="heart"
+                  width={24}
+                  height={24}
+                />
+              </IconButton>
             </div>
           </h2>
           <div className={css.subTitle}>

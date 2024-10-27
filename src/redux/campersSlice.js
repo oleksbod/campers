@@ -1,4 +1,4 @@
-import { createSelector, createSlice } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 import { fetchCampers } from './campersOps';
 
 const handlePending = (state) => {
@@ -18,7 +18,8 @@ const campersSlice = createSlice({
     loading: false,
     error: null,
     total: 0,
-    page: 1
+    page: 1,
+    myFavorites: []
   },
   reducers: {
     resetCampers: (state) => {
@@ -28,6 +29,14 @@ const campersSlice = createSlice({
     },
     incrementPage: (state) => {
       state.page += 1;
+    },
+    addFavorite: (state, action) => {
+      if (!state.myFavorites.includes(action.payload)) {
+        state.myFavorites.push(action.payload);
+      }
+    },
+    removeFavorite: (state, action) => {
+      state.myFavorites = state.myFavorites.filter((id) => id !== action.payload);
     }
   },
   extraReducers: (builder) => {
@@ -46,18 +55,13 @@ const campersSlice = createSlice({
   }
 });
 
-export const { resetCampers, incrementPage } = campersSlice.actions;
+export const { resetCampers, incrementPage, addFavorite, removeFavorite } = campersSlice.actions;
 
 export const selectCampers = (state) => state.campers.items;
 export const selectLoading = (state) => state.campers.loading;
 export const selectError = (state) => state.campers.error;
 export const selectTotal = (state) => state.campers.total;
 export const selectPage = (state) => state.campers.page;
-
-export const selectFilteredContacts = createSelector(
-  [selectCampers, (state) => state.filters.name],
-  (campers, nameFilter) =>
-    campers.filter((camper) => camper.name.toLowerCase().includes(nameFilter.toLowerCase()))
-);
+export const selectMyFavorites = (state) => state.campers.myFavorites;
 
 export default campersSlice.reducer;

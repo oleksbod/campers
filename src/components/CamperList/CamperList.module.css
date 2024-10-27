@@ -5,3 +5,7 @@
 .button {
   margin: 0 auto;
 }
+
+.noResults {
+  text-align: center;
+}
