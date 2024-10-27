@@ -3,21 +3,24 @@ import css from './Filters.module.css';
 import Equipment from './Equipment/Equipment';
 import VehicleType from './VehicleType/VehicleType';
 import clsx from 'clsx';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useState } from 'react';
 import {
   changeFormFilter,
   changeLocationFilter,
-  changeEquipmentsFilter
+  changeEquipmentsFilter,
+  selectLocationFilter,
+  selectEquipmentFilter,
+  selectFormFilter
 } from '../../redux/filtersSlice';
 import { resetCampers } from '../../redux/campersSlice';
 import { fetchCampers } from '../../redux/campersOps';
 
 const Filters = () => {
   const dispatch = useDispatch();
-  const [localLocation, setLocalLocation] = useState('');
-  const [localEquipments, setLocalEquipments] = useState([]);
-  const [localVehicleType, setLocalVehicleType] = useState('');
+  const [localLocation, setLocalLocation] = useState(useSelector(selectLocationFilter));
+  const [localEquipments, setLocalEquipments] = useState(useSelector(selectEquipmentFilter));
+  const [localVehicleType, setLocalVehicleType] = useState(useSelector(selectFormFilter));
 
   const handleSearch = () => {
     dispatch(changeLocationFilter(localLocation));
@@ -25,7 +28,6 @@ const Filters = () => {
     dispatch(changeFormFilter(localVehicleType));
 
     dispatch(resetCampers());
-
     dispatch(fetchCampers());
   };
 

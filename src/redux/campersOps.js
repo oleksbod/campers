@@ -5,8 +5,6 @@ import VehicleTypeEnum from '../models/enums/VehicleType.enum';
 
 axios.defaults.baseURL = 'https://66b1f8e71ca8ad33d4f5f63e.mockapi.io/campers';
 
-export const itemsPerLoad = 10;
-
 export const fetchCampers = createAsyncThunk('campers/fetchAll', async (_, thunkAPI) => {
   try {
     const state = thunkAPI.getState();
@@ -25,7 +23,7 @@ export const fetchCampers = createAsyncThunk('campers/fetchAll', async (_, thunk
 
     const params = {
       page: campers.page,
-      limit: itemsPerLoad,
+      limit: campers.itemsPerLoad,
       ...(filters.location && { location: filters.location }),
       ...(filters.form && {
         form: filters.form === VehicleTypeEnum.Van ? 'panelTruck' : filters.form.replace(' ', '')
@@ -42,6 +40,23 @@ export const fetchCampers = createAsyncThunk('campers/fetchAll', async (_, thunk
 
     return response.data;
   } catch (error) {
+    if (error?.response?.data) {
+      return thunkAPI.rejectWithValue(error.response.data);
+    }
+
+    return thunkAPI.rejectWithValue(error.message);
+  }
+});
+
+export const fetchCamperById = createAsyncThunk('campers/fetchById', async (id, thunkAPI) => {
+  try {
+    const response = await axios.get(`/${id}`);
+    return response.data;
+  } catch (error) {
+    if (error?.response?.data) {
+      return thunkAPI.rejectWithValue(error.response.data);
+    }
+
     return thunkAPI.rejectWithValue(error.message);
   }
 });

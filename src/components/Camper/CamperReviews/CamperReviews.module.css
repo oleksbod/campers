@@ -1,0 +1,25 @@
+.container {
+  width: 631px;
+  min-height: 580px;
+}
+
+.header {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.nameContainer {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+  flex-direction: column;
+}
+
+.reviewItem {
+  margin-bottom: 44px;
+}
+
+.main {
+  color: var(--color-gray-dark);
+}

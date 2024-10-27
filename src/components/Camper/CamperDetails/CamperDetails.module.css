@@ -1,0 +1,50 @@
+.header {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.detailSection {
+  margin-bottom: 60px;
+}
+
+.price {
+  margin-top: 16px;
+  margin-bottom: 28px;
+}
+
+.description {
+  margin-top: 28px;
+  color: var(--color-gray-dark);
+}
+
+.gallery {
+  display: flex;
+  justify-content: flex-start;
+  gap: 24px;
+}
+
+.imgWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 292px;
+  height: 312px;
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--color-gray-lightest);
+}
+
+.img {
+  height: 100%;
+}
+
+.actionsSection {
+  position: relative;
+}
+
+.contactForm {
+  position: absolute;
+  right: 0;
+  top: 92px;
+}

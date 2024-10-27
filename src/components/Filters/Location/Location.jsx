@@ -15,12 +15,7 @@ const Location = ({ value, onChange }) => {
           height={20}
         />
 
-        <input
-          className={css.locationInput}
-          placeholder="City"
-          value={value}
-          onChange={(e) => onChange(e.target.value)}
-        />
+        <input placeholder="City" value={value} onChange={(e) => onChange(e.target.value)} />
       </div>
     </Fragment>
   );

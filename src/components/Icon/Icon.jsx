@@ -18,7 +18,7 @@ const Icon = ({
       stroke={isSpecialIcon && strokeColor ? strokeColor : 'none'}
       className={className}
       aria-hidden="true">
-      <use href={`./images/svgs.svg#icon-${iconName}`} />
+      <use href={`/images/svgs.svg#icon-${iconName}`} />
     </svg>
   );
 };

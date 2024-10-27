@@ -6,11 +6,13 @@ import { useDispatch, useSelector } from 'react-redux';
 import {
   incrementPage,
   selectCampers,
+  selectItemsPerLoad,
   selectLoading,
   selectPage,
   selectTotal
 } from '../../redux/campersSlice';
-import { fetchCampers, itemsPerLoad } from '../../redux/campersOps';
+import { fetchCampers } from '../../redux/campersOps';
+import { CircularProgress } from '@mui/material';
 
 const CamperList = () => {
   const dispatch = useDispatch();
@@ -18,6 +20,7 @@ const CamperList = () => {
   const loading = useSelector(selectLoading);
   const page = useSelector(selectPage);
   const total = useSelector(selectTotal);
+  const itemsPerLoad = useSelector(selectItemsPerLoad);
 
   useEffect(() => {
     dispatch(fetchCampers());
@@ -41,7 +44,11 @@ const CamperList = () => {
         </ul>
       )}
 
-      {loading && <p>Loading...</p>}
+      {loading && (
+        <div className={css.loaderContainer}>
+          <CircularProgress size="3rem" sx={{ color: 'var(--color-red-dark)' }} />
+        </div>
+      )}
 
       {total > page * itemsPerLoad && (
         <button className={clsx('button', 'white-btn', css.button)} onClick={() => loadMore()}>

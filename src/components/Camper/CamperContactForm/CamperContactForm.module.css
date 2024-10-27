@@ -1,0 +1,44 @@
+.container {
+  width: 641px;
+  border-radius: 10px;
+  padding: 44px;
+  border: 1px solid var(--color-gray-light);
+}
+
+.title {
+  margin-bottom: 8px;
+}
+
+.subTitle {
+  margin-bottom: 24px;
+  color: var(--color-gray-medium);
+}
+
+.formGroup {
+  margin-bottom: 14px;
+}
+
+.input {
+  padding: 18px;
+  border-radius: 12px;
+  background: var(--color-gray-lightest);
+  width: 100%;
+  border: none;
+  resize: none;
+}
+
+.input:focus-visible {
+  border: none;
+  outline: none;
+}
+
+.errorMessage {
+  color: var(--color-red-dark);
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+.button {
+  margin: 0 auto;
+  margin-top: 24px;
+}

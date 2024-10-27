@@ -1,0 +1,25 @@
+.container {
+  max-width: 631px;
+  width: 100%;
+  border-radius: 10px;
+  background: var(--color-gray-lightest);
+  padding: 44px;
+}
+
+.equipments {
+  min-height: 204px;
+}
+
+.detailItem {
+  font-weight: var(--weight-medium);
+  display: flex;
+  justify-content: space-between;
+}
+
+.detailItem:not(:last-of-type) {
+  margin-bottom: 16px;
+}
+
+.upperCase {
+  text-transform: capitalize;
+}

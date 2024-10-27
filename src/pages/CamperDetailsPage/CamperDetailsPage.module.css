@@ -1,0 +1,10 @@
+.container {
+  padding: 110px 64px 52px;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.notFound {
+  text-align: center;
+}

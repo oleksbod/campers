@@ -1,0 +1,11 @@
+.subTitle {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.rating {
+  margin-right: 12px;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
