@@ -42,3 +42,10 @@
   margin: 0 auto;
   margin-top: 24px;
 }
+
+@media (max-width: 1420px) {
+  .container {
+    max-width: 631px;
+    width: 100%;
+  }
+}

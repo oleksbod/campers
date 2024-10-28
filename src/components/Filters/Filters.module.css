@@ -1,6 +1,7 @@
 .filtersContainer {
   width: 100%;
   max-width: 360px;
+  background-color: var(--color-white);
 }
 
 .filtersLabel {
@@ -8,7 +9,48 @@
   font-weight: var(--weight-medium);
   margin-bottom: 32px;
 }
+.footer {
+  display: flex;
+  justify-content: space-between;
+}
 
 .button {
   margin-top: 40px;
+}
+
+.filtersBtn {
+  display: none;
+}
+.closeBtn {
+  display: none;
+}
+
+@media (max-width: 1440px) {
+  .filtersContainer {
+    position: fixed;
+    z-index: 10;
+    top: 60px;
+    left: -100%;
+    height: 100vh;
+    padding: 32px;
+    width: 424px;
+    max-width: 424px;
+    transition: left 0.5s ease;
+  }
+  .filtersBtn {
+    display: flex;
+    margin-left: auto;
+  }
+  .closeBtn {
+    display: flex;
+  }
+}
+@media (max-width: 568px) {
+  .filtersBtn {
+    margin: 0;
+  }
+}
+
+.filtersContainer.openFilters {
+  left: 0;
 }

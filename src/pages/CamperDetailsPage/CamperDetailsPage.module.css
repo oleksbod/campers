@@ -8,3 +8,16 @@
 .notFound {
   text-align: center;
 }
+
+@media (max-width: 728px) {
+  .container {
+    min-width: 400px;
+  }
+}
+
+@media (max-width: 468px) {
+  .container {
+    min-width: 430px;
+    padding: 110px 32px 32px;
+  }
+}

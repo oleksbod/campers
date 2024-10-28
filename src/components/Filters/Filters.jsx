@@ -4,7 +4,7 @@ import Equipment from './Equipment/Equipment';
 import VehicleType from './VehicleType/VehicleType';
 import clsx from 'clsx';
 import { useDispatch, useSelector } from 'react-redux';
-import { useState } from 'react';
+import { Fragment, useState } from 'react';
 import {
   changeFormFilter,
   changeLocationFilter,
@@ -21,6 +21,7 @@ const Filters = () => {
   const [localLocation, setLocalLocation] = useState(useSelector(selectLocationFilter));
   const [localEquipments, setLocalEquipments] = useState(useSelector(selectEquipmentFilter));
   const [localVehicleType, setLocalVehicleType] = useState(useSelector(selectFormFilter));
+  const [isFiltersOpen, setIsFiltersOpen] = useState(false);
 
   const handleSearch = () => {
     dispatch(changeLocationFilter(localLocation));
@@ -29,22 +30,40 @@ const Filters = () => {
 
     dispatch(resetCampers());
     dispatch(fetchCampers());
+
+    toggleFilters();
+  };
+
+  const toggleFilters = () => {
+    setIsFiltersOpen(!isFiltersOpen);
   };
 
   return (
-    <div className={css.filtersContainer}>
-      <Location value={localLocation} onChange={setLocalLocation} />
+    <Fragment>
+      <div className={clsx(css.filtersContainer, { [css.openFilters]: isFiltersOpen })}>
+        <Location value={localLocation} onChange={setLocalLocation} />
 
-      <label className={css.filtersLabel}>Filters</label>
+        <label className={css.filtersLabel}>Filters</label>
 
-      <Equipment selectedEquipments={localEquipments} onChange={setLocalEquipments} />
+        <Equipment selectedEquipments={localEquipments} onChange={setLocalEquipments} />
 
-      <VehicleType selectedVehicleType={localVehicleType} onChange={setLocalVehicleType} />
+        <VehicleType selectedVehicleType={localVehicleType} onChange={setLocalVehicleType} />
 
-      <button className={clsx('button', css.button)} onClick={() => handleSearch()}>
-        Search
+        <footer className={css.footer}>
+          <button
+            className={clsx('button', 'white-btn', css.button, css.closeBtn)}
+            onClick={() => toggleFilters()}>
+            Close
+          </button>
+          <button className={clsx('button', css.button)} onClick={() => handleSearch()}>
+            Search
+          </button>
+        </footer>
+      </div>
+      <button className={clsx('button', css.filtersBtn)} onClick={() => toggleFilters()}>
+        {isFiltersOpen ? 'Close filters' : 'Open filters'}
       </button>
-    </div>
+    </Fragment>
   );
 };
 

@@ -9,3 +9,16 @@
   text-decoration: underline;
   text-underline-offset: 4px;
 }
+
+.ratingItem {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+@media (max-width: 524px) {
+  .subTitle {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

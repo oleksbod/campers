@@ -4,15 +4,18 @@ import css from './CamperHeaderReview.module.css';
 const CamperHeaderReview = ({ camper }) => {
   return (
     <div className={css.subTitle}>
-      <Icon iconName="star" width={16} height={16} color="var(--color-yellow)" />
+      <div className={css.ratingItem}>
+        <Icon iconName="star" width={16} height={16} color="var(--color-yellow)" />
 
-      <span className={css.rating}>
-        {camper.rating}({camper.reviews.length} Reviews)
-      </span>
+        <span className={css.rating}>
+          {camper.rating}({camper.reviews.length} Reviews)
+        </span>
+      </div>
+      <div className={css.ratingItem}>
+        <Icon iconName="map" width={16} height={16} />
 
-      <Icon iconName="map" width={16} height={16} />
-
-      {camper.location}
+        {camper.location}
+      </div>
     </div>
   );
 };

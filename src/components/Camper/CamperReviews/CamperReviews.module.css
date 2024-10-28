@@ -1,5 +1,6 @@
 .container {
-  width: 631px;
+  max-width: 631px;
+  width: 100%;
   min-height: 580px;
 }
 
@@ -22,4 +23,10 @@
 
 .main {
   color: var(--color-gray-dark);
+}
+
+@media (max-width: 1420px) {
+  .container {
+    min-height: auto;
+  }
 }

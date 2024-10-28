@@ -23,3 +23,9 @@
 .upperCase {
   text-transform: capitalize;
 }
+
+@media (max-width: 468px) {
+  .equipments {
+    margin-bottom: 20px;
+  }
+}

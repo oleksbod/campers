@@ -32,3 +32,10 @@
 .active {
   color: var(--color-red-light);
 }
+
+@media (max-width: 468px) {
+  .container {
+    padding: 24px 32px;
+    min-width: 430px;
+  }
+}
