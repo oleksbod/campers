@@ -30,11 +30,11 @@
     position: fixed;
     z-index: 10;
     top: 60px;
-    left: -100%;
+    left: -440px;
     height: calc(100vh - 60px);
     padding: 20px;
     width: 430px;
-    max-width: 424px;
+    max-width: 430px;
     transition: left 0.5s ease;
     overflow-x: auto;
   }
