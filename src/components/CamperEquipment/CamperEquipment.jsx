@@ -35,23 +35,26 @@ const CamperEquipment = ({ camper }) => {
     }
   };
 
-  const filteredFeatures = Object.entries(featureMap).filter(([key]) => {
-    if (key === 'engine' && camper[key] !== 'petrol') return false;
-    if (key === 'transmission' && camper[key] !== 'automatic') return false;
-    return camper[key];
-  });
-
   return (
     <div className={css.container}>
-      {filteredFeatures.map(([key, label]) => (
-        <Chip
-          sx={chipStyles}
-          key={key}
-          label={label}
-          icon={<Icon iconName={label.toLowerCase()} width={16} height={16} />}
-          color="var(--color-gray-lighter)"
-        />
-      ))}
+      {Object.entries(featureMap).map(([key, label]) => {
+        if (!camper[key]) return null;
+
+        const name = key === 'engine' || key === 'transmission' ? camper[key] : label;
+
+        console.log(name);
+
+        return (
+          <Chip
+            className={css.chip}
+            sx={chipStyles}
+            key={key}
+            label={name.toString()}
+            icon={<Icon iconName={label.toLowerCase()} width={16} height={16} />}
+            color="var(--color-gray-lighter)"
+          />
+        );
+      })}
     </div>
   );
 };

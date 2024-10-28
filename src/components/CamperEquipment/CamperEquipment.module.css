@@ -9,3 +9,7 @@
   fill: var(--color-gray-lighter);
   stroke: var(--color-main);
 }
+
+.chip {
+  text-transform: capitalize;
+}
