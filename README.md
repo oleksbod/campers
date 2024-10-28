@@ -2,6 +2,12 @@
 
 Travel Trucks is a web application built with React, Redux JavaScript libraries. This project leverages Vite for fast development and builds.
 
+## Live Demo
+
+You can view the live version of the Travel Trucks application at the following link:
+
+[Travel Trucks Live Demo](https://traveltruckscampers.vercel.app/)
+
 ## Prerequisites
 
 Ensure you have the following installed:
