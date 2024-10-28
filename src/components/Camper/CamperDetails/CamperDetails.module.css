@@ -74,6 +74,7 @@
   .header {
     justify-content: center;
   }
+
   .detailSection {
     display: flex;
     flex-direction: column;

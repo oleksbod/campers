@@ -38,10 +38,12 @@
     transition: left 0.5s ease;
     overflow-x: auto;
   }
+
   .filtersBtn {
     display: flex;
     margin-left: auto;
   }
+
   .closeBtn {
     display: flex;
   }
