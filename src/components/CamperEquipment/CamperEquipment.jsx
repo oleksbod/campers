@@ -42,8 +42,6 @@ const CamperEquipment = ({ camper }) => {
 
         const name = key === 'engine' || key === 'transmission' ? camper[key] : label;
 
-        console.log(name);
-
         return (
           <Chip
             className={css.chip}
