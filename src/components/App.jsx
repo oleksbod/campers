@@ -4,7 +4,7 @@ import NotFoundPage from '../pages/NotFoundPage/NotFoundPage';
 import Header from './Header/Header';
 import { useSelector } from 'react-redux';
 import { selectError } from '../redux/campersSlice';
-import Notifications from './Helpers/Notifications/Notifications';
+import Notifications from './Helpers/Notifications';
 
 const HomePage = lazy(() => import('../pages/HomePage/HomePage'));
 const CampersPage = lazy(() => import('../pages/CampersPage/CampersPage'));

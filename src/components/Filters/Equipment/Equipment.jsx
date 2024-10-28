@@ -16,7 +16,9 @@ const Equipment = ({ selectedEquipments, onChange }) => {
   return (
     <Fragment>
       <h3 className={css.equipmentTitle}>Vehicle equipment</h3>
+
       <Divider sx={{ backgroundColor: 'var(--color-gray-light)' }} />
+
       <StyledToggleButtonGroup
         value={selectedEquipments}
         onChange={handleEquipments}

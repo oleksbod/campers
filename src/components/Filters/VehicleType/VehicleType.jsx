@@ -16,7 +16,9 @@ const VehicleType = ({ selectedVehicleType, onChange }) => {
   return (
     <Fragment>
       <h3 className={css.vehicleTitle}>Vehicle type</h3>
+
       <Divider sx={{ backgroundColor: 'var(--color-gray-light)' }} />
+
       <StyledToggleButtonGroup
         className={css.vehicleGroup}
         value={selectedVehicleType}

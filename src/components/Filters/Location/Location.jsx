@@ -7,6 +7,7 @@ const Location = ({ value, onChange }) => {
   return (
     <Fragment>
       <label className={css.locationLabel}>Location</label>
+
       <div className={clsx('inputContainer', css.inputContainer)}>
         <Icon
           className={clsx('inputIcon', { blackIcon: value })}

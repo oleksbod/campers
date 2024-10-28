@@ -3,14 +3,14 @@ import css from './CamperContactForm.module.css';
 import * as Yup from 'yup';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
-import Notifications from '../../Helpers/Notifications/Notifications';
+import Notifications from '../../Helpers/Notifications';
 import { useState } from 'react';
 
 const validationSchema = Yup.object({
   name: Yup.string().required('Name is required'),
   email: Yup.string().email('Invalid email').required('Email is required'),
   bookingDate: Yup.date().required('Booking date is required'),
-  comment: Yup.string() // Optional field, no validation required
+  comment: Yup.string()
 });
 
 const CamperContactForm = () => {
@@ -47,6 +47,7 @@ const CamperContactForm = () => {
                 className={`${css.input} ${touched.name && errors.name ? css.error : ''}`}
                 placeholder="Name*"
               />
+
               <ErrorMessage name="name" component="div" className={css.errorMessage} />
             </div>
 
@@ -57,6 +58,7 @@ const CamperContactForm = () => {
                 className={`${css.input} ${touched.email && errors.email ? css.error : ''}`}
                 placeholder="Email*"
               />
+
               <ErrorMessage name="email" component="div" className={css.errorMessage} />
             </div>
 

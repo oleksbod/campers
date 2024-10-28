@@ -11,6 +11,7 @@ const Header = () => {
     <header className={css.header}>
       <div className={css.container}>
         <img className={css.logoImg} src="/images/logo.png" alt="logo" />
+
         <nav className={css.nav}>
           <NavLink to="/" className={buildLinkClass}>
             Home

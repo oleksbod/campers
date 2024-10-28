@@ -12,7 +12,7 @@ import {
   selectTotal
 } from '../../redux/campersSlice';
 import { fetchCampers } from '../../redux/campersOps';
-import { CircularProgress } from '@mui/material';
+import Loader from '../Helpers/Loader';
 
 const CamperList = () => {
   const dispatch = useDispatch();
@@ -46,7 +46,7 @@ const CamperList = () => {
 
       {loading && (
         <div className={css.loaderContainer}>
-          <CircularProgress size="3rem" sx={{ color: 'var(--color-red-dark)' }} />
+          <Loader />
         </div>
       )}
 

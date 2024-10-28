@@ -5,7 +5,7 @@ import { useEffect } from 'react';
 import { fetchCamperById } from '../../redux/campersOps';
 import css from './CamperDetailsPage.module.css';
 import CamperDetails from '../../components/Camper/CamperDetails/CamperDetails';
-import { CircularProgress } from '@mui/material';
+import Loader from '../../components/Helpers/Loader';
 
 const CamperDetailsPage = () => {
   const { id } = useParams();
@@ -21,7 +21,7 @@ const CamperDetailsPage = () => {
     <div className={css.container}>
       {loading && (
         <div className="loaderContainer">
-          <CircularProgress size="3rem" sx={{ color: 'var(--color-red-dark)' }} />
+          <Loader />
         </div>
       )}
 

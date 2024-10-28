@@ -11,43 +11,58 @@ const CamperTabs = () => {
     setTab(newValue);
   };
 
+  const tabListStyles = {
+    '& .MuiTab-root': {
+      fontSize: '20px',
+      fontWeight: '600',
+      color: 'var(--color-main)',
+      lineHeight: '24px',
+      textTransform: 'none',
+      padding: '0',
+      paddingBottom: '24px',
+      marginRight: '40px',
+      fontFamily: 'Inter',
+      '&.Mui-selected': {
+        color: 'var(--color-main)'
+      }
+    }
+  };
+
+  const dividerStyles = {
+    backgroundColor: 'var(--color-gray-light)',
+    marginTop: '-2px',
+    marginBottom: '46px'
+  };
+
+  const tabPanelStyles = { maxWidth: '631px', padding: '0' };
+
+  const indicatorStyle = {
+    backgroundColor: 'var(--color-red-dark)',
+    height: '4px',
+    borderRadius: '2px'
+  };
+
   return (
     <TabContext value={tab}>
       <TabList
         onChange={handleChange}
         aria-label="tabs"
         TabIndicatorProps={{
-          style: { backgroundColor: 'var(--color-red-dark)', height: '4px', borderRadius: '2px' }
+          style: indicatorStyle
         }}
-        sx={{
-          '& .MuiTab-root': {
-            fontSize: '20px',
-            fontWeight: '600',
-            color: 'var(--color-main)',
-            lineHeight: '24px',
-            textTransform: 'none',
-            padding: '0',
-            paddingBottom: '24px',
-            marginRight: '40px',
-            fontFamily: 'Inter',
-            '&.Mui-selected': {
-              color: 'var(--color-main)'
-            }
-          }
-        }}>
+        sx={tabListStyles}>
         <Tab label="Features" value="1" />
+
         <Tab label="Reviews" value="2" />
       </TabList>
 
-      <Divider
-        sx={{ backgroundColor: 'var(--color-gray-light)', marginTop: '-2px', marginBottom: '46px' }}
-      />
+      <Divider sx={dividerStyles} />
 
-      <TabPanel value="1" sx={{ maxWidth: '631px', padding: '0' }}>
+      <TabPanel value="1" sx={tabPanelStyles}>
         <CamperFeatures />
       </TabPanel>
 
-      <TabPanel value="2" sx={{ maxWidth: '631px', padding: '0' }}>
+      <TabPanel value="2" sx={tabPanelStyles}>
         <CamperReviews />
       </TabPanel>
     </TabContext>

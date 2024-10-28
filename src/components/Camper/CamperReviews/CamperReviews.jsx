@@ -22,11 +22,13 @@ const CamperReviews = () => {
               }}>
               {item.reviewer_name[0]}
             </Avatar>
+
             <div className={css.nameContainer}>
               {item.reviewer_name}
               <ReviewRating rating={item.reviewer_rating} />
             </div>
           </header>
+
           <main className={css.main}>{item.comment}</main>
         </div>
       ))}
