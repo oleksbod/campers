@@ -12,7 +12,9 @@ const CamperEquipment = ({ camper }) => {
     refrigerator: 'Refrigerator',
     microwave: 'Microwave',
     gas: 'Gas',
-    water: 'Water'
+    water: 'Water',
+    transmission: 'Automatic',
+    engine: 'Petrol'
   };
 
   const chipStyles = {
@@ -33,19 +35,23 @@ const CamperEquipment = ({ camper }) => {
     }
   };
 
+  const filteredFeatures = Object.entries(featureMap).filter(([key]) => {
+    if (key === 'engine' && camper[key] !== 'petrol') return false;
+    if (key === 'transmission' && camper[key] !== 'automatic') return false;
+    return camper[key];
+  });
+
   return (
     <div className={css.container}>
-      {Object.entries(featureMap).map(([key, label]) =>
-        camper[key] ? (
-          <Chip
-            sx={chipStyles}
-            key={key}
-            label={label}
-            icon={<Icon iconName={label.toLowerCase()} width={16} height={16} />}
-            color="var(--color-gray-lighter)"
-          />
-        ) : null
-      )}
+      {filteredFeatures.map(([key, label]) => (
+        <Chip
+          sx={chipStyles}
+          key={key}
+          label={label}
+          icon={<Icon iconName={label.toLowerCase()} width={16} height={16} />}
+          color="var(--color-gray-lighter)"
+        />
+      ))}
     </div>
   );
 };
