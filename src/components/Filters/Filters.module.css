@@ -11,7 +11,8 @@
 }
 .footer {
   display: flex;
-  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 40px;
 }
 
 .button {
@@ -21,6 +22,7 @@
 .filtersBtn {
   display: none;
 }
+
 .closeBtn {
   display: none;
 }
